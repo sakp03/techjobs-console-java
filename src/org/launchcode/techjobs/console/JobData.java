@@ -77,6 +77,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
+            //added .toLowerCase() to handle case sensitivity
             if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
@@ -90,12 +91,16 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        // Create a HashMap object called "newVal"
         ArrayList<HashMap<String, String>> newVal = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-            //.keySet gets the keys from the row hashmap then we created a new string to get the keys in aValue
+            //.keySet gets the keys from the hashmap then we created a new string to get the keys in aValue
             for (String key : row.keySet()) {
+                //Create a string to hold the keys we got from .keySet()
                 String aValue = row.get(key);
+                //Now we are saying if the key has the value, we are adding to the hashmap
+                //.toLowerCase is to help with case sensitivity
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     newVal.add(row);
                     break;

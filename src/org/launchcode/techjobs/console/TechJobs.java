@@ -63,6 +63,7 @@ public class TechJobs {
 
                 if (searchField.equals("all")) {
                     //added this line print the findByValue method for when the user chooses search all
+                    //.toLowerCase() for case sensitivity
                     printJobs(JobData.findByValue(searchTerm.toLowerCase()));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm.toLowerCase()));
@@ -112,12 +113,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        // This "IF" statement is for when an existing value is searched for.
 
+        // This "IF" statement is for when some value is searched for and there are no results that come back.
+        // .size gets the number of elements in this list, basically you are checking if the size is 0
         if (someJobs.size() == 0) {
              System.out.println("There are no results. Try again.");
         }
 
+        // This "IF" statement is when the computer reads that the other "IF" is not zero.
+        // .entrySet() method returns a collection-view of the mappings contained in this map.
+        // .getkey() retrieves the key
+        // .getValue() retrieves the value
         if (someJobs == someJobs) {
             for (Map<String, String> job: someJobs) {
                 System.out.println("\n*****");
