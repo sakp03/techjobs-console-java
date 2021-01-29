@@ -93,7 +93,7 @@ public class JobData {
         ArrayList<HashMap<String, String>> newVal = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-            //
+            //.keySet gets the keys from the row hashmap then we created a new string to get the keys in aValue
             for (String key : row.keySet()) {
                 String aValue = row.get(key);
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
