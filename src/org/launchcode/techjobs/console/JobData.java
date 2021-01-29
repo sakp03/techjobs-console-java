@@ -103,6 +103,8 @@ public class JobData {
                 //.toLowerCase is to help with case sensitivity
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     newVal.add(row);
+                    // terminate the loop so that it'll go to the next statement
+                    // this helps so that you don't generate doubles
                     break;
                 }
             }
