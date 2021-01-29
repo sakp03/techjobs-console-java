@@ -62,6 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine().toLowerCase();
 
                 if (searchField.equals("all")) {
+                    //added this line print the findByValue method for when the user chooses search all
                     printJobs(JobData.findByValue(searchTerm.toLowerCase()));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm.toLowerCase()));
