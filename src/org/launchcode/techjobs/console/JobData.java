@@ -98,6 +98,7 @@ public class JobData {
                 String aValue = row.get(key);
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     newVal.add(row);
+                    break;
                 }
             }
         }
